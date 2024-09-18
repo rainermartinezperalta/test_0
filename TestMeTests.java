@@ -9,22 +9,20 @@ import c.TestMe;
 
 public class TestMeTests {
 
-	TestMe testMe;
+    TestMe testMe;
 
-	@Before
-	public void setUp() throws Exception {
-		testMe  = new TestMe();
+    @Before
+    public void setUp() throws Exception {
+        testMe = new TestMe();
     }
 
-	@Test
-	public void squareTest() {
+    @Test
+    public void squareTest() {
+        double baseValue = 3.0;
+        double expected = baseValue * baseValue;
+        testMe.setValue(baseValue);
+        double actual = testMe.square();
 
-		double baseValue = 3.0;
-		double expected = baseValue*baseValue;
-		testMe.setValue(3.0);
-		double actual = testMe.square();
-
-		assertTrue(actual == expected);
-	}
-
+        assertTrue(actual == expected);
+    }
 }
